@@ -1,0 +1,507 @@
+<style>
+    ::selection {
+  background: #FF5E99;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+body {
+  font-size: 11pt;
+  font-family: Inconsolata, monospace;
+  color: white;
+  background-color: black;
+}
+#container {
+  padding: .1em 1.5em 1em 1em;
+}
+#container output {
+  clear: both;
+  width: 100%;
+}
+#container output h3 {
+  margin: 0;
+}
+#container output pre {
+  margin: 0;
+}
+.input-line {
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  clear: both;
+}
+.input-line > div:nth-child(2) {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+}
+.prompt {
+  white-space: nowrap;
+  color: #96b38a;
+  margin-right: 7px;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-box-pack: center;
+  -moz-box-orient: vertical;
+  display: box;
+  box-pack: center;
+  box-orient: vertical;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.cmdline {
+  outline: none;
+  background-color: transparent;
+  margin: 0;
+  width: 100%;
+  font: inherit;
+  border: none;
+  color: inherit;
+}
+.ls-files {
+  height: 45px;
+  -webkit-column-width: 100px;
+  -moz-column-width: 100px;
+  -o-column-width: 100px;
+  column-width: 100px;
+}
+
+
+/************************************************************/
+/* SVG Clock                                                */
+/************************************************************/
+
+.clock-container {
+  display: none /*inline-block*/;
+  position: relative;
+  width: 200px;
+  vertical-align: middle;
+  overflow: hidden;
+} 
+
+.clock-container > svg > circle {
+  stroke-width: 2px;
+  stroke: #fff;
+}
+
+.hour, .min, .sec { 
+  stroke-width: 1px;
+  fill: #333;
+  stroke: #555;
+}
+
+.sec {
+   stroke: #f55;
+}
+
+
+  </style>
+  <style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #00FFFB;
+  color: white;
+}
+</style>
+<style>
+    .shell.responsive {
+    width: 100%;
+    height: 100%;
+    min-height: 200px; }
+  .shell.typed .content .line {
+    display: none; }
+  .shell .status-bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 21px;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    background: #333333;
+    border: 1px solid #292929;
+    border-bottom: 0; }
+    .shell .status-bar .buttons {
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+              flex-grow: 2; }
+      .shell .status-bar .buttons button {
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        border: 0;
+        padding: 0;
+        outline: none;
+        text-align: center;
+        margin: 0 2px;
+        border-radius: 50%;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        font-size: 13.5px;
+        line-height: 11.25px; }
+        .shell .status-bar .buttons button i {
+          text-align: center;
+          width: 100%;
+          height: 15px;
+          display: block;
+          font-size: 7.5px;
+          line-height: 11.25px; }
+        .shell .status-bar .buttons button.icon-close {
+          background: #FF4F37;
+          color: #FF4F37; }
+          .shell .status-bar .buttons button.icon-close:hover {
+            color: #841000; }
+        .shell .status-bar .buttons button.icon-minimize {
+          background: #FEC600;
+          color: #FEC600; }
+          .shell .status-bar .buttons button.icon-minimize:hover {
+            color: #987600; }
+        .shell .status-bar .buttons button.icon-enlarge {
+          background: #00DB51;
+          color: #00DB51; }
+          .shell .status-bar .buttons button.icon-enlarge:hover {
+            color: #00752b; }
+    .shell .status-bar .title {
+      font-size: 12px;
+      line-height: 20.25px;
+      text-align: left;
+      -webkit-box-flex: 98;
+          -ms-flex-positive: 98;
+              flex-grow: 98; }
+  .shell .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    border: 1px solid #292929;
+    padding: 1px;
+    font-size: 12px;
+    line-height: 13.5px;
+    background: #292929;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    .shell .content .line.active {
+      display: block; }
+    .shell .content .line .prefix .user {
+      color: #8AD733; }
+    .shell .content .line .prefix .host {
+      color: #8AD733; }
+    .shell .content .line .prefix .path {
+      color: #729FCF; }
+    .shell .content .line .prefix .root .user {
+      color: #FFFFFF; }
+    .shell .content .line .prefix .root .host {
+      color: #FFFFFF; }
+    .shell .content .line .prefix .root .path {
+      color: #FFFFFF; }
+  .shell.light .content {
+    color: #878787;
+    border-color: #EBEBEB;
+    background: #FFFFFF; }
+  .shell.light .typed-cursor {
+    background-color: #878787; }
+  .shell .typed-cursor {
+    opacity: 1;
+    background-color: #F1F1F1;
+    -webkit-animation: blink 1s infinite;
+            animation: blink 1s infinite; }
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0; }
+  49% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+
+@keyframes blink {
+  0% {
+    opacity: 0; }
+  49% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+  .shell.ubuntu .status-bar {
+    border-color: transparent;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3F3F3F), to(#585858));
+    background-image: linear-gradient(to bottom, #3F3F3F 0%, #585858 100%); }
+    .shell.ubuntu .status-bar .icon {
+      display: none; }
+    .shell.ubuntu .status-bar .title {
+      color: #FFFFFF; }
+    .shell.ubuntu .status-bar .buttons button.icon-close {
+      background: #D75224;
+      color: #444444; }
+      .shell.ubuntu .status-bar .buttons button.icon-close:hover {
+        background: #c14a20;
+        color: #444444; }
+    .shell.ubuntu .status-bar .buttons button.icon-minimize, .shell.ubuntu .status-bar .buttons button.icon-enlarge {
+      background: #898989;
+      color: #555555; }
+      .shell.ubuntu .status-bar .buttons button.icon-minimize:hover, .shell.ubuntu .status-bar .buttons button.icon-enlarge:hover {
+        background: #7c7c7c;
+        color: #555555; }
+  .shell.ubuntu .content {
+    border-color: transparent;
+    background: #300924; }
+    .shell.ubuntu .content .line .prefix .user {
+      color: #FFFFFF; }
+    .shell.ubuntu .content .line .prefix .host {
+      color: #FFFFFF; }
+    .shell.ubuntu .content .line .prefix .path {
+      color: #FFFFFF; }
+    .shell.ubuntu .content .line .prefix .root .user {
+      color: #FFFFFF; }
+    .shell.ubuntu .content .line .prefix .root .host {
+      color: #FFFFFF; }
+    .shell.ubuntu .content .line .prefix .root .path {
+      color: #FFFFFF; }
+  .shell.ubuntu.light {
+    color: #878787; }
+    .shell.ubuntu.light .content {
+      background: #FFFFFF; }
+      .shell.ubuntu.light .content .line .prefix .user {
+        color: #878787; }
+      .shell.ubuntu.light .content .line .prefix .host {
+        color: #878787; }
+      .shell.ubuntu.light .content .line .prefix .path {
+        color: #878787; }
+      .shell.ubuntu.light .content .line .prefix .root .user {
+        color: #878787; }
+      .shell.ubuntu.light .content .line .prefix .root .host {
+        color: #878787; }
+      .shell.ubuntu.light .content .line .prefix .root .path {
+        color: #878787; }
+  .shell.osx .status-bar {
+    border-color: #EBEBEB;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#EBEBEB), to(#CBCBCB));
+    background-image: linear-gradient(to bottom, #EBEBEB 0%, #CBCBCB 100%);
+    position: relative; }
+    .shell.osx .status-bar .buttons {
+      position: absolute;
+      height: 100%; }
+    .shell.osx .status-bar .title {
+      color: #878787;
+      text-align: center;
+      -webkit-box-flex: 100;
+          -ms-flex-positive: 100;
+              flex-grow: 100; }
+  .shell.osx .content {
+    background: rgba(0, 0, 0, 0.9); }
+    .shell.osx .content .line .prefix .user {
+      color: #FFFFFF; }
+    .shell.osx .content .line .prefix .host {
+      color: #FFFFFF; }
+    .shell.osx .content .line .prefix .path {
+      color: #FFFFFF; }
+    .shell.osx .content .line .prefix .root .user {
+      color: #FFFFFF; }
+    .shell.osx .content .line .prefix .root .host {
+      color: #FFFFFF; }
+    .shell.osx .content .line .prefix .root .path {
+      color: #FFFFFF; }
+  .shell.osx.light {
+    color: #878787; }
+    .shell.osx.light .content {
+      border-color: #EBEBEB;
+      background: #FFFFFF; }
+      .shell.osx.light .content .line .prefix .user {
+        color: #878787; }
+      .shell.osx.light .content .line .prefix .host {
+        color: #878787; }
+      .shell.osx.light .content .line .prefix .path {
+        color: #878787; }
+      .shell.osx.light .content .line .prefix .root .user {
+        color: #878787; }
+      .shell.osx.light .content .line .prefix .root .host {
+        color: #878787; }
+      .shell.osx.light .content .line .prefix .root .path {
+        color: #878787; }
+  .shell.windows {
+    color: #FFFFFF;
+    border-radius: 0;
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.5); }
+    .shell.windows .status-bar {
+      border: 0;
+      height: 30px;
+      background-color: #69C1F0; }
+      .shell.windows .status-bar .buttons {
+        -webkit-box-align: stretch;
+            -ms-flex-align: stretch;
+                align-items: stretch;
+        -webkit-box-ordinal-group: 2;
+            -ms-flex-order: 1;
+                order: 1;
+        padding: 0; }
+        .shell.windows .status-bar .buttons button {
+          margin: 0;
+          border-radius: 0;
+          width: 25px;
+          height: 20px;
+          font-size: 13.5px;
+          line-height: 15px; }
+          .shell.windows .status-bar .buttons button i {
+            width: 100%;
+            height: 20px;
+            font-size: 7.5px;
+            line-height: 15px; }
+          .shell.windows .status-bar .buttons button.icon-close {
+            width: 50px;
+            background: #C75050;
+            color: #FFFFFF; }
+            .shell.windows .status-bar .buttons button.icon-close:hover {
+              background: #c03d3d;
+              color: #FFFFFF; }
+          .shell.windows .status-bar .buttons button.icon-minimize {
+            background: transparent;
+            color: #292929; }
+            .shell.windows .status-bar .buttons button.icon-minimize:hover {
+              background: #1698dd;
+              color: #FFFFFF; }
+          .shell.windows .status-bar .buttons button.icon-enlarge {
+            background: transparent;
+            color: #292929; }
+            .shell.windows .status-bar .buttons button.icon-enlarge:hover {
+              background: #1698dd;
+              color: #FFFFFF; }
+      .shell.windows .status-bar .icon {
+        background: #000000;
+        color: #FFFFFF;
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        font-size: 9px;
+        line-height: 15px;
+        border-radius: 3px;
+        margin: 5px; }
+      .shell.windows .status-bar .title {
+        font-size: 12px;
+        line-height: 30px;
+        color: #292929; }
+    .shell.windows .content {
+      border-color: #69C1F0;
+      background: #000000; }
+      .shell.windows .content .line .prefix .user {
+        color: #FFFFFF; }
+      .shell.windows .content .line .prefix .host {
+        color: #FFFFFF; }
+      .shell.windows .content .line .prefix .path {
+        color: #FFFFFF; }
+      .shell.windows .content .line .prefix .root .user {
+        color: #FFFFFF; }
+      .shell.windows .content .line .prefix .root .host {
+        color: #FFFFFF; }
+      .shell.windows .content .line .prefix .root .path {
+        color: #FFFFFF; }
+</style>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <title>HTML5 Web Terminal</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata"
+          rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <div id="osx" class="shell osx dark">
+    <div class="status-bar">
+     <div class="buttons"> 
+      <button Href="Home.html" class="icon-close icon-dot"></button> 
+      <button Href="Home.html" class="icon-minimize"></button> 
+      <button Href="Home.html" class="icon-enlarge"></button> 
+     </div>
+     <div class="title">
+      Terminal R12.
+     </div>
+    </div>
+    <div id="container">
+      <output></output>
+      <div id="input-line" class="input-line">
+        <div class="prompt"></div><div><input class="cmdline" autofocus /></div>
+      </div>
+    </div>
+    
+    <!--<script src="http://www.codehelper.io/api/ips/?js"></script>-->
+    <script src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></script>
+    <script src="https://rendyca12.github.io/Terminal-Js/LEbPJx.js"></script>
+    
+    <div class="clock-container">
+      <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="45"/>
+        <g>
+          <rect class="hour" x="47.5" y="12.5" width="5" height="40" rx="2.5" ry="2.55" />
+          <rect class="min" x="48.5" y="12.5" width="3" height="40" rx="2" ry="2"/>
+          <line class="sec" x1="50" y1="50" x2="50" y2="16" />
+        </g>
+      </svg>
+    </div>
+    <script>
+        $(function() {
+  
+  // Set the command-line prompt to include the user's IP Address
+  //$('.prompt').html('[' + codehelper_ip["IP"] + '@HTML5] # ');
+    $('.prompt').html('>>> ');
+
+  // Initialize a new terminal object
+  var term = new Terminal('#input-line .cmdline', '#container output');
+  term.init();
+  
+  // Update the clock every second
+  setInterval(function() {
+    function r(cls, deg) {
+      $('.' + cls).attr('transform', 'rotate('+ deg +' 50 50)')
+    }
+    var d = new Date()
+    r("sec", 6*d.getSeconds())  
+    r("min", 6*d.getMinutes())
+    r("hour", 30*(d.getHours()%12) + d.getMinutes()/2)
+  }, 1000);
+  
+});
+        </script> 
