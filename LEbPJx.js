@@ -9,34 +9,6 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 
   var cmdLine_ = document.querySelector(cmdLineContainer);
   var output_ = document.querySelector(outputContainer);
-
-  const CMDS_ = [
-    'R12.ScTermux', 'clock', 'date', 'echo', 'help', 'uname', 'whoami'
-  ];
-  
-  const CMDS1_ = [
-    'R12.Fb', 'R12.Ig', 'R12.Twit', 'R12.Wa', 'R12.All'
-  ];
-  
-  const CMDS11_ = [
-    '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)',
-  ];
-  
-  const CMDS12_ = [
-    '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)'
-  ];
-  
-  const CMDS13_ = [
-    '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)'
-  ];
-  
-  const CMDS14_ = [
-    '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)'
-  ];
-  
-  const CMDS15_ = [
-    '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)', '(KOSONG)'
-  ];
   
   var fs_ = null;
   var cwd_ = null;
@@ -125,10 +97,11 @@ case 'tess':
 output('<href="Generator.sh">');
 break;
 
-        case 'r12.halo':
+/////    (Hallo)
+        case 'halo':
           var url = args.join(' ');
           if (!url) {
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Bot Sedang Aktif)</h1>');
+            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
             break;
           }
           $.get( url, function(data) {
@@ -139,10 +112,10 @@ break;
           });          
           break;
           
-          case 'r12.hallo':
+          case 'hallo':
           var url = args.join(' ');
           if (!url) {
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Bot Sedang Aktif)</h1>');
+            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
             break;
           }
           $.get( url, function(data) {
@@ -153,10 +126,10 @@ break;
           });          
           break;
           
-          case 'r12.helo':
+          case 'helo':
           var url = args.join(' ');
           if (!url) {
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Bot Sedang Aktif)</h1>');
+            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
             break;
           }
           $.get( url, function(data) {
@@ -166,36 +139,49 @@ break;
             output('<pre>' + encodedStr + '</pre>');
           });          
           break;
+/////    (Hallo)
           
-          case 'r12.assalamualaikum':
-            output('<h1 style="text-align: center; font-size: 12px; color: red;">WaalaikumSalam</h1>');
+/////    (Salam)
+          case 'assalamualaikum':
+            output('<h1 style="text-align: center; font-size: 12px; color: red;">WaalaikumSalam Ukhti😁</h1>');
+            break;
             
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Bot Sedang Aktif)</h1>');
+            case 'asalamualaikum':
+            output('<h1 style="text-align: center; font-size: 12px; color: red;">WaalaikumSalam Ukhti😁</h1>');
             break;
+            
+            case 'asalammualaikum':
+            output('<h1 style="text-align: center; font-size: 12px; color: red;">WaalaikumSalam Ukhti😁</h1>');
+            break;      
+/////    (Salam)
           
-///Akhir
-          
+/////    (Pembersih)
         case 'r12.clear':
           output_.innerHTML = '';
           this.value = '';
           output('<img align="left" src="20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">HTML5 Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
           return;
-          
+/////    (Pembersih)
         case 'r12.clock':
           var appendDiv = jQuery($('.clock-container')[0].outerHTML);
           appendDiv.attr('style', 'display:inline-block');
           output_.appendChild(appendDiv[0]);
           break;
-          
+/////    (Pembersih)
+
+/////    (Date)
         case 'r12.date':
           output( new Date() );
           break;
+/////    (Date)
           
+/////    (Live Html)
         case 'r12.527235':
           output( args.join(' ') );
           break;
+/////    (Live Html)
           
-////Page Awal (Help)
+/////    (Bantuan)
         case 'r12.help':
             output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
             output('<h1 style="text-align: center; font-size: 11px; color: #ffffff;">Powered By</h1><h1 style="text-align: center; font-size: 14px; color: #00FFFA;">Rendyca12</h1> ');
@@ -312,7 +298,7 @@ case 'pw().':
   //
   return {
     init: function() {
-      output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">HTML5 Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
+      output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
     },
     output: output
   }
