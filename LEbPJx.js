@@ -159,7 +159,7 @@ break;
         case 'r12.clear':
           output_.innerHTML = '';
           this.value = '';
-          output('<img align="left" src="20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">HTML5 Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
+          output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
           return;
 /////    (Pembersih)
         case 'r12.clock':
