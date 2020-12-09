@@ -182,6 +182,7 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
           output_.innerHTML = '';
           this.value = '';
           output('<h1 style="text-align: center; font-size: 15px; color: #00FFF4;">Kode Ini Sedang Di Buat, Mohon Bersabar☺, Btw Anda Kepo:v</h1><h1 style="text-align: center; font-size: 10px; color: red;">Jika Anda Ingin Tampilan Awal, Ketik "R12.clear"</h1>');
+          break;
 /////    (Pribadi)
 
 /////    (Creator)
