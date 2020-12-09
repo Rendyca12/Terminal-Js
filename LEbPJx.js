@@ -90,12 +90,6 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
       }
 
       switch (cmd) {
-          
-///Cek Aktif/Tidak
-
-case 'tess':
-output('<href="Generator.sh">');
-break;
 
 /////    (Hallo)
         case 'halo':
@@ -159,7 +153,7 @@ break;
         case 'r12.clear':
           output_.innerHTML = '';
           this.value = '';
-          output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
+          output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help-1" for more information.</p>');
           return;
 /////    (Pembersih)
 
@@ -184,58 +178,28 @@ break;
 /////    (Live Html)
           
 /////    (Bantuan)
-        case 'r12.help':
+          case 'r12.help-1':
             output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
-            output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
-            output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Contoh: (R12.clear)</h1>');
-            output('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><div class="container"><table class="table table-striped"><thead><tr><th>Kode</th><th>-=☆=-</th></tr></thead><tbody><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.html</td><td>Pertinjau Html Buatan Anda</td></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar</td><tr><td>R12.upload</td><td>Upload Html Anda, Agar Bisa Di Akses Semua Org</td></tr></tr></tbody></table></div>');
+            output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Penjelasan Lebih Lanjut Ketik "R12.help-2"</h1>');
+            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.html</td><td>Pertinjau Html Buatan Anda</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar</td></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.creator</td><td>Upload Html Anda, Agar Bisa Di Akses Oleh Semua Org</td></tr></table>');
             output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
           break;
-//Page Script Termux (Fb)
-         
-//Page Script Termux (Ig)
-         
-//Page Script Termux (Twit)
-
-
-///Bentuk Cinta
-case 'from-bentukcinta':
-          break;
-case 'bentukcinta().itu()':
-          output('<img align="center" src="20200817_062509.png" width="200" height="200" ');
-          break;;
           
-case 'siapa?':
-          output('<h1 style="text-align: center; font-size: 15px; color: Red;">Ya-Kamu()</h1>');
-          output('<marquee behavior="scroll" direction="Right" scrollamount="10" scrolldelay="2" width="10%"><font color="#96b38a" face="monospace" size="2px">@Rendyca12</font> </marquee>');
-          break;;
-///Bentuk Cinta
-//Gobal:v
-case 'gitclone().':
+          case 'r12.help-2':
+            output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
+            output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Contoh: (R12.clear)</h1>');
+            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Untuk Melihat Status Anda</td></tr><tr><td>R12.html</td><td>Jika Anda Ingin Menampilkan Html Anda, Silakan Masukan Kode "R12.html" Trus Paste Kode Html Nya Setelah Itu Enter</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar, Kalian Cukup Ketikan Kode "R12.clock"</td></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.creator</td><td>Jika Anda Ingin Mempublikasikan Html Buatan Anda / Agar Bisa Di Lihat Oleh Orang, Ketik "R12.creator" Setelah Itu Ikutin Perintah Nya</td></tr></table>');
+            output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
           break;
-case 'cd(hack)':
-          break;
-case 'hack-ip(yt).':
-output('<h1 style="text-align: center; font-size: 15px; color:#96b38a;">Channel Siapa Yg Ingin Anda Bobol?</h1>');
-          break;
-case 'attahalilintar':
-          output('<h1 style="text-align: center; font-size: 15px; color: #96b38a;">Ok, Sedang Mencari Data Base, Jika Sudah Ketik "Pw()."</h1>');
-          break;;
-case 'pw().':
-          output('<h1 style="text-align: center; font-size: 15px; color: #96b38a;">Tunggu-Tunggu... Jangan Kan Bobol Channel Atta, Bobol Hati Mu Aja Aku Bisa:)</h1>');
-          break;;
-//Gombal
-//Page Script Termux (Wa)
-         
-//Page Script Termux (All)
-        
-        
-     
-          
+/////    (Bantuan)
+
+/////    (status)
         case 'r12.status':
           output(navigator.appVersion);
           break;
-          
+/////    (status)
+
+
         case 'whoami':
           var result = "<img src=\"" + codehelper_ip["Flag"]+ "\"><br><br>";
           for (var prop in codehelper_ip)
@@ -292,7 +256,7 @@ case 'pw().':
   //
   return {
     init: function() {
-      output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
+      output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help-1" for more information.</p>');
     },
     output: output
   }
