@@ -176,6 +176,19 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
           output( args.join(' ') );
           break;
 /////    (Live Html)
+
+/////    (Pribadi)
+        case 'rendyca12':
+          output_.innerHTML = '';
+          this.value = '';
+          output('<h1 style="text-align: center; font-size: 15px; color: #00FFF4;">Kode Ini Sedang Di Buat, Mohon Bersabar☺, Btw Anda Kepo:v</h1><h1 style="text-align: center; font-size: 10px; color: red;">Jika Anda Ingin Tampilan Awal, Ketik "R12.clear"</h1>');
+/////    (Pribadi)
+
+/////    (Creator)
+        case 'r12.creator':
+          output('<h1 style="text-align: center; font-size: 15px; color: Red;">Mohon Bersabar, Saya Akan Membuat Nya...</h1>');
+          break;
+/////    (Creator)
           
 /////    (Bantuan)
           case 'r12.help-1':
@@ -188,7 +201,7 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
           case 'r12.help-2':
             output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
             output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Contoh: (R12.clear)</h1>');
-            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Untuk Melihat Status Anda</td></tr><tr><td>R12.html</td><td>Jika Anda Ingin Menampilkan Html Anda, Silakan Masukan Kode "R12.html" Trus Paste Kode Html Nya Setelah Itu Enter</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar, Kalian Cukup Ketikan Kode "R12.clock"</td></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.creator</td><td>Jika Anda Ingin Mempublikasikan Html Buatan Anda / Agar Bisa Di Lihat Oleh Orang, Ketik "R12.creator" Setelah Itu Ikutin Perintah Nya</td></tr></table>');
+            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Untuk Melihat Status Anda</td></tr><tr><td>R12.html</td><td>Jika Anda Ingin Menampilkan Html Anda, Silakan Masukan Kode "R12.html" (spasi) Trus Paste Kode Html Nya Setelah Itu Enter</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar, Kalian Cukup Ketikan Kode "R12.clock"</td></tr><tr><td>R12.creator</td><td>Jika Anda Ingin Mempublikasikan Html Buatan Anda / Agar Bisa Di Lihat Oleh Orang, Ketik "R12.creator" Setelah Itu Ikutin Perintah Nya</td></tr></table>');
             output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
           break;
 /////    (Bantuan)
