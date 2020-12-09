@@ -162,12 +162,14 @@ break;
           output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help" for more information.</p>');
           return;
 /////    (Pembersih)
+
+/////    (Jam)
         case 'r12.clock':
           var appendDiv = jQuery($('.clock-container')[0].outerHTML);
           appendDiv.attr('style', 'display:inline-block');
           output_.appendChild(appendDiv[0]);
           break;
-/////    (Pembersih)
+/////    (Jam)
 
 /////    (Date)
         case 'r12.date':
@@ -176,22 +178,14 @@ break;
 /////    (Date)
           
 /////    (Live Html)
-        case 'r12.527235':
+        case 'r12.html':
           output( args.join(' ') );
           break;
 /////    (Live Html)
           
 /////    (Bantuan)
         case 'r12.help':
-            output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
-            output('<h1 style="text-align: center; font-size: 11px; color: #ffffff;">Powered By</h1><h1 style="text-align: center; font-size: 14px; color: #00FFFA;">Rendyca12</h1> ');
-            output('<h1 style="text-align: center; font-size: 11px; color: #ffffff;">Phone/Wa</h1><h1 style="text-align: center; font-size: 14px; color: #00FFFA;">0812-9225-8980</h1> ');
-            output('<h1 style="text-align: center; font-size: 11px; color: #ffffff;">Gmail</h1><h1 style="text-align: center; font-size: 14px; color: #00FFFA;">srendyca@gmail.com</h1> ');
-            output('<h1 style="text-align: center; font-size: 11px; color: #ffffff;">Website (Pribadi)</h1><h1 style="text-align: center; font-size: 14px; color: #00FFFA;">https://rendyca12.blogspot.com</h1></marquee> ');
-            output('<h1 style="text-align: center; font-size: 11px; color: #ffffff;">Website (Script Termux)</h1><h1 style="text-align: center; font-size: 14px; color: #00FFFA;">https://sc-termux.blogspot.com</h1></marquee> ');
-            output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
-            output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Contoh: (R12.clear)</h1>');
-          output('<style src="jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>----</th></tr><tr><td>clear</td><td>Menghapus Semua Data</td></tr><tr><td>Date</td><td>(-)</td></tr><tr><td>clock</td><td>(-)</td></tr><tr><td>527235</td><td>Echo (-)</td></tr><tr><td>418180</td><td>Script Termux (-)</td></tr></table>');
+            output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee><h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Contoh: (R12.clear)</h1><p style="text-align: left; color: Black;">Code: </br>🔴 R12.Status ➡ (Cek Status Anda)<br>🔴 R12.html ➡ (Pertinjau Html Buatan Anda)<br>🔴 R12.clock ➡ (Untuk Menampilkan Jam Di Layar)<br>🔴 R12.Status ➡ (Cek Status Anda)<br>🔴 R12.upload ➡ (Upload Html Anda, Agar Bisa Di Akses Semua Org)<br></p><marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
           break;
 ///Page (Script Termux)
        case 'r12.418180':
@@ -238,7 +232,7 @@ case 'pw().':
         
      
           
-        case 'uname':
+        case 'r12.status':
           output(navigator.appVersion);
           break;
           
