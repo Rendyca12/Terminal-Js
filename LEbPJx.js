@@ -252,7 +252,7 @@ case 'pw().':
           
         default:
           if (cmd) {
-            output(cmd + ': <h1 style="text-align: center; font-size: 21px; color: #E0E3F0;">code not found<h1 style="text-align: center; font-size: 21px; color: #FF0019;">ERROR 404</h1>');
+            output(cmd + '❌ <h1 style="text-align: center; font-size: 21px; color: #E0E3F0;">code not found<h1 style="text-align: center; font-size: 21px; color: #FF0019;">ERROR 404</h1>');
           }
       };
 
