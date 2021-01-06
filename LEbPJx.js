@@ -213,7 +213,7 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
           break;
 /////    (status)
 
-case 'Virus()':
+case 'virus()':
             output('<h1 style="text-align: center; font-size: 17px; color: red;">Ok Siap, Mau Di Kirim Ke Mana? </h1>');
             break;
 
