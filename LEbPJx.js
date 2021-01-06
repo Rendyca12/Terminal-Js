@@ -213,6 +213,10 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
           break;
 /////    (status)
 
+case 'Virus()':
+            output('<h1 style="text-align: center; font-size: 17px; color: red;">Ok Siap, Mau Di Kirim Ke Mana? </h1>');
+            break;
+
 
         case 'whoami':
           var result = "<img src=\"" + codehelper_ip["Flag"]+ "\"><br><br>";
