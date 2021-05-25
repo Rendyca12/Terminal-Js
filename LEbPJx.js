@@ -91,50 +91,40 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 
       switch (cmd) {
 
+/////    (rusak)
+          case '12.20.3.80':
+          var url = args.join(' ');
+          if (!url) {
+            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
+            break;
+          }
+          $.get( url, function(data) {
+            var encodedStr = data.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+               return '&#'+i.charCodeAt(0)+';';
+            });
+            output('<pre>' + encodedStr + '</pre>');
+          });          
+          break;
+/////    (rusak)
+         
 /////    (Hallo)
-        case 'halo':
-          var url = args.join(' ');
-          if (!url) {
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
+          case 'Hallo':
+            output('<h1 style="text-align: center; font-size: 14px; color: red;">Hallo</h1>');
             break;
-          }
-          $.get( url, function(data) {
-            var encodedStr = data.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-               return '&#'+i.charCodeAt(0)+';';
-            });
-            output('<pre>' + encodedStr + '</pre>');
-          });          
-          break;
-          
-          case 'hallo':
-          var url = args.join(' ');
-          if (!url) {
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
+           
+           case 'Halo':
+            output('<h1 style="text-align: center; font-size: 14px; color: red;">Hallo</h1>');
             break;
-          }
-          $.get( url, function(data) {
-            var encodedStr = data.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-               return '&#'+i.charCodeAt(0)+';';
-            });
-            output('<pre>' + encodedStr + '</pre>');
-          });          
-          break;
-          
-          case 'helo':
-          var url = args.join(' ');
-          if (!url) {
-            output('<h1 style="text-align: center; font-size: 15px; color: red;">(Rendyca12 》 Hallo.)</h1><br><h1 style="text-align: center; font-size: 15px; color: red;">Enter "R12.help" for more information.</h1>');
+           
+           case 'Hello':
+            output('<h1 style="text-align: center; font-size: 14px; color: red;">Hallo</h1>');
             break;
-          }
-          $.get( url, function(data) {
-            var encodedStr = data.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-               return '&#'+i.charCodeAt(0)+';';
-            });
-            output('<pre>' + encodedStr + '</pre>');
-          });          
-          break;
+            
+            case 'Helo':
+            output('<h1 style="text-align: center; font-size: 14px; color: red;">Hallo</h1>');
+            break;
 /////    (Hallo)
-          
+            
 /////    (Salam)
           case 'assalamualaikum':
             output('<h1 style="text-align: center; font-size: 12px; color: red;">WaalaikumSalam Ukhti😁</h1>');
@@ -150,7 +140,7 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 /////    (Salam)
           
 /////    (Pembersih)
-        case 'r12.clear':
+        case 'clear':
           output_.innerHTML = '';
           this.value = '';
           output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help-1" for more information.</p>');
@@ -158,7 +148,7 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 /////    (Pembersih)
 
 /////    (Jam)
-        case 'r12.clock':
+        case 'clock':
           var appendDiv = jQuery($('.clock-container')[0].outerHTML);
           appendDiv.attr('style', 'display:inline-block');
           output_.appendChild(appendDiv[0]);
@@ -166,13 +156,13 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 /////    (Jam)
 
 /////    (Date)
-        case 'r12.date':
+        case 'date':
           output( new Date() );
           break;
 /////    (Date)
           
 /////    (Live Html)
-        case 'r12.html':
+        case 'r12.livehtml':
           output( args.join(' ') );
           break;
 /////    (Live Html)
@@ -186,39 +176,32 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 /////    (Pribadi)
 
 /////    (Creator)
-        case 'r12.creator':
-          output('<h1 style="text-align: center; font-size: 15px; color: Red;">Mohon Bersabar, Saya Akan Membuat Nya...</h1>');
+        case 'creator':
+          output('<h1 style="text-align: center; font-size: 15px; color: Red;">Mohon Bersabar, Code Ini Sedang Di Perbaharui...</h1>');
           break;
 /////    (Creator)
           
 /////    (Bantuan)
-          case 'r12.help-1':
+          case 'help':
             output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
             output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Penjelasan Lebih Lanjut Ketik "R12.help-2"</h1>');
             output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.html</td><td>Pertinjau Html Buatan Anda</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar</td></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.creator</td><td>Upload Html Anda, Agar Bisa Di Akses Oleh Semua Org</td></tr></table>');
             output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
           break;
-          
-          case 'r12.help-2':
-            output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
-            output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Contoh: (R12.clear)</h1>');
-            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Untuk Melihat Status Anda</td></tr><tr><td>R12.html</td><td>Jika Anda Ingin Menampilkan Html Anda, Silakan Masukan Kode "R12.html" (spasi) Trus Paste Kode Html Nya Setelah Itu Enter</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar, Kalian Cukup Ketikan Kode "R12.clock"</td></tr><tr><td>R12.creator</td><td>Jika Anda Ingin Mempublikasikan Html Buatan Anda / Agar Bisa Di Lihat Oleh Orang, Ketik "R12.creator" Setelah Itu Ikutin Perintah Nya</td></tr></table>');
-            output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
-          break;
 /////    (Bantuan)
 
 /////    (status)
-        case 'r12.status':
+        case '12.20.3.79':
           output(navigator.appVersion);
           break;
 /////    (status)
 
-case 'virus':
+case '12.20.3.76':
             output('<h1 style="text-align: center; font-size: 17px; color: red;">Ok Siap, Mau Di Kirim Ke Mana? </h1>');
             break;
 
 
-        case 'whoami':
+        case '12.20.3.78':
           var result = "<img src=\"" + codehelper_ip["Flag"]+ "\"><br><br>";
           for (var prop in codehelper_ip)
             result += prop + ": " + codehelper_ip[prop] + "<br>";
