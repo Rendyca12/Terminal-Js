@@ -143,12 +143,12 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
         case 'clear':
           output_.innerHTML = '';
           this.value = '';
-          output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help-1" for more information.</p>');
+          output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">R12 Web Terminal</h2><p>' + new Date() + '</p><p>Enter "help" for more information.</p>');
           return;
 /////    (Pembersih)
 
 /////    (Jam)
-        case 'clock':
+        case '12.92.4.87':
           var appendDiv = jQuery($('.clock-container')[0].outerHTML);
           appendDiv.attr('style', 'display:inline-block');
           output_.appendChild(appendDiv[0]);
@@ -162,7 +162,7 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
 /////    (Date)
           
 /////    (Live Html)
-        case 'r12.livehtml':
+        case 'livehtml':
           output( args.join(' ') );
           break;
 /////    (Live Html)
@@ -171,8 +171,23 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
         case 'rendyca12':
           output_.innerHTML = '';
           this.value = '';
-          output('<h1 style="text-align: center; font-size: 15px; color: #00FFF4;">Kode Ini Sedang Di Buat, Mohon Bersabar☺, Btw Anda Kepo:v</h1><h1 style="text-align: center; font-size: 10px; color: red;">Jika Anda Ingin Tampilan Awal, Ketik "R12.clear"</h1>');
+          output('<h1 style="text-align: center; font-size: 15px; color: #00FFF4;">Kode Ini Sedang Di Buat, Mohon Bersabar☺, Btw Anda Kepo:v</h1><h1 style="text-align: center; font-size: 10px; color: red;">Jika Anda Ingin Tampilan Awal, Ketik "clear"</h1>');
           break;
+          
+        case '12.98.3.46':
+            output('<iframe ="https://hitungwr.com/"></iframe>');
+           break;
+          
+         case '12.09.05.123':
+         output_.innerHTML = '';
+          this.value = '';
+            output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">R12 Web Terminal</h2><p>' + new Date() + '</p><p>Enter "help" for more information.</p>');
+            output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
+            output('<h1 style="text-align: center; font-size: 15px; color: Red;">Hanya Untuk Admin</h1><h1 style="text-align: center; font-size: 14px; color: Red;"></h1>');
+            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>12.26.3.79</td><td>Cek Devices</td></tr><tr><td>Rendyca12</td><td>Profile Me</td></tr><tr><td>12.39.7.58</td><td>Salin Code Sendiri</td></tr><tr><td>help</td><td>Cek Code</td></tr><tr><td>date</td><td>Cek Tanggal</td></tr><tr><td>12.92.4.87</td><td>Untuk Menampilkan Jam Di Layar</td></tr><tr><td>livehtml</td><td>Menampilkan Html</td></tr><tr><td>creator</td><td>Publish, Script Para Creator</td></tr></table>');
+            output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
+          return;
+      ///Script <tr><td>###</td><td>###</td></tr>
 /////    (Pribadi)
 
 /////    (Creator)
@@ -185,23 +200,24 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
           case 'help':
             output('<marquee behavior="scroll" direction="left" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
             output('<h1 style="text-align: center; font-size: 15px; color: Red;">Using Dot (R12.) For Command!!!</h1><h1 style="text-align: center; font-size: 14px; color: Red;">Penjelasan Lebih Lanjut Ketik "R12.help-2"</h1>');
-            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.html</td><td>Pertinjau Html Buatan Anda</td></tr><tr><td>R12.clock</td><td>Untuk Menampilkan Jam Di Layar</td></tr><tr><td>R12.Status</td><td>Cek Status Anda</td></tr><tr><td>R12.creator</td><td>Upload Html Anda, Agar Bisa Di Akses Oleh Semua Org</td></tr></table>');
+            output('<style src="https://rendyca12.github.io/Terminal-Js/jquery-2.1.1.min.js"></style></style><table id="customers"><tr><th>Code</th><th>-=☆=-</th></tr><tr><td>Rendyca12</td><td>Profile Me</td></tr><tr><td>help</td><td>Cek Code</td></tr><tr><td>date</td><td>Cek Tanggal</td></tr><tr><td>livehtml</td><td>Menampilkan Html</td></tr><tr><td>creator</td><td>Publish, Script Para Creator</td></tr></table>');
             output('<marquee behavior="scroll" direction="Right" scrollamount="100" scrolldelay="2" width="100%"><font color="#96b38a" face="monospace" size="4px">____________________________________________________________________________</font> </marquee>');
           break;
+       ///Script <tr><td>###</td><td>###</td></tr>
 /////    (Bantuan)
 
 /////    (status)
-        case '12.20.3.79':
+        case '12.26.3.79':
           output(navigator.appVersion);
           break;
 /////    (status)
-
-case '12.20.3.76':
+          
+        case '12.20.3.76':
             output('<h1 style="text-align: center; font-size: 17px; color: red;">Ok Siap, Mau Di Kirim Ke Mana? </h1>');
             break;
 
 
-        case '12.20.3.78':
+        case '12.39.7.58':
           var result = "<img src=\"" + codehelper_ip["Flag"]+ "\"><br><br>";
           for (var prop in codehelper_ip)
             result += prop + ": " + codehelper_ip[prop] + "<br>";
@@ -211,7 +227,7 @@ case '12.20.3.76':
           
         default:
           if (cmd) {
-            output(cmd + '❌ <h1 style="text-align: center; font-size: 21px; color: #E0E3F0;">code not found<h1 style="text-align: center; font-size: 21px; color: #FF0019;">ERROR 404</h1>');
+            output('<h1 style="text-align: center; font-size: 18px; color: #E0E3F0;">(' + cmd + ')<h1 style="text-align: center; font-size: 15px; color: #FF0019;">code not found!</h1>');
           }
       };
 
@@ -257,7 +273,7 @@ case '12.20.3.76':
   //
   return {
     init: function() {
-      output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">BroColi Web Terminal</h2><p>' + new Date() + '</p><p>Enter "R12.help-1" for more information.</p>');
+      output('<img align="left" src="https://rendyca12.github.io/Terminal-Js/20200815_213053.png" width="100" height="100" style="padding: 0px 10px 20px 0px"><h2 style="letter-spacing: 4px">R12 Web Terminal</h2><p>' + new Date() + '</p><p>Enter "help" for more information.</p>');
     },
     output: output
   }
