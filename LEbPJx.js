@@ -177,6 +177,10 @@ var Terminal = Terminal || function(cmdLineContainer, outputContainer) {
         case '12.98.3.46':
             output('<iframe ="https://hitungwr.com/"></iframe>');
            break;
+         
+         case '12.98.3.49':
+            output('<iframe ="https://sites.google.com/view/rendyca12/home/data"></iframe>');
+           break;
           
          case '12.09.05.123':
          output_.innerHTML = '';
